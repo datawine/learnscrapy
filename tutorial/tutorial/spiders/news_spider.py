@@ -1,6 +1,10 @@
-import scrapy
-from tutorial.items import NewsItem
+import os
 import re
+
+import scrapy
+
+from tutorial.items import NewsItem
+
 
 def genNewsItem(title, link):
     nitem = NewsItem()
@@ -31,8 +35,9 @@ class NewsSpider(scrapy.Spider):
                 yield scrapy.Request(pageurl, callback=self.pasePage)
     
     def pasePage(self, response):
-        fn =  response.xpath('//title').extract()[0].replace(' ', '')
+        fn =  response.xpath('//title').extract()[0]
         fn = re.split('[<>]', fn)
-        fn = fn[2].split('-')[1] + '.html'
-        with open(fn, 'wb') as f:
+        fn = fn[2].replace(' ', '').split('-')[1]
+        os.makedirs('./newsdata/' + fn)
+        with open('./newsdata/' + fn + '/' + fn + '.html', 'wb') as f:
             f.write(response.body)

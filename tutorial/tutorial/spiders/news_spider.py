@@ -1,4 +1,11 @@
 import scrapy
+from tutorial.items import NewsItem
+
+def genNewsItem(title, link):
+    nitem = NewsItem()
+    nitem['title'] = title
+    nitem['link'] = link
+    return nitem
 
 class NewsSpider(scrapy.Spider):
     name = "news"
@@ -16,8 +23,7 @@ class NewsSpider(scrapy.Spider):
         for sel in response.xpath('//ul/li/a'):
             title = sel.xpath('text()').extract();
             link = sel.xpath('@href').extract();
-            if (link[0].find('publish') != -1 
-                and len(title) > 0
-                and link[0] != originindex
-                and link[0] != englishindex):
-                print title, link
+            if (link[0].find('publish') != -1 and len(title) > 0
+                and link[0] != originindex and link[0] != englishindex):                
+                nitem = genNewsItem(title, link)
+                yield nitem

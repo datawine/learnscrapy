@@ -1,0 +1,1014 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>清华大学新闻网</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link href="/publish/thunews/css/base.css" rel="stylesheet" type="text/css">
+<link href="/publish/thunews/css/index.css" rel="stylesheet" type="text/css">
+<link href="/publish/thunews/font/font.css" rel="stylesheet" type="text/css">
+<script src="/publish/thunews/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/publish/thunews/css/slick.css">
+<script src="/publish/thunews/js/slick.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/publish/thunews/css/owl.carousel.css">
+<script src="/publish/thunews/js/owl.carousel.min.js" type="text/javascript"></script>
+<script src="/publish/thunews/js/jquery.wookmark.js" type="text/javascript"></script>
+<script src="/publish/thunews/js/index.js" type="text/javascript"></script>
+<script src="/publish/thunews/js/comm.js" type="text/javascript"></script>
+<script src="/publish/thunews/js/dload.js" type="text/javascript"></script>
+<script src="/publish/thunews/js/regex-cn.js" type="text/javascript"></script>
+<script src="/publish/thunews/js/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+<!--[if lt IE 9]>
+<script src="/publish/thunews/js/html5.js" type="text/javascript"></script>
+<script src="/publish/thunews/js/json2.js" type="text/javascript"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+ <link rel="stylesheet" href="/publish/thunews/font/ie7/ie7.css">
+<!--<![endif]-->
+<script src="/publish/thunews/js/jc_news.js" type="text/javascript"></script>
+<script type="text/javascript">
+// 对Date的扩展，将 Date 转化为指定格式的String 
+// 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符， 
+// 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字) 
+// 例子： 
+// (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423 
+// (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18 
+Date.prototype.Format = function(fmt) 
+{ 
+ //author: meizz 
+  var o = { 
+    "M+" : this.getMonth()+1,                 //月份 
+    "d+" : this.getDate(),                    //日 
+    "h+" : this.getHours(),                   //小时 
+    "m+" : this.getMinutes(),                 //分 
+    "s+" : this.getSeconds(),                 //秒 
+    "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+    "S"  : this.getMilliseconds()             //毫秒 
+  }; 
+  if(/(y+)/.test(fmt)) 
+    fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+  for(var k in o) 
+    if(new RegExp("("+ k +")").test(fmt)) 
+  fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length))); 
+  return fmt; 
+}
+//2015.08 年.月
+function getYM(dtStr,id){
+var dtArr = dtStr.split("-");
+var dt = new Date(dtArr[0], dtArr[1]-1, dtArr[2]);
+//var time1 = dt.Format("yyyy-MM-dd hh:mm:ss");  
+var time2 = dt.Format("yyyy.MM.dd");  
+var yyyy=time2.substr(0,7);
+$("#"+id).text(yyyy);
+return yyyy; 
+}
+//10 日期
+function getDay(dtStr,id){
+var dtArr = dtStr.split("-");
+var dt = new Date(dtArr[0], dtArr[1]-1, dtArr[2]);
+//var time1 = dt.Format("yyyy-MM-dd hh:mm:ss");  
+var time2 = dt.Format("yyyy.MM.dd");
+var md=time2.substr(8); 
+$("#"+id).text(md);
+return md; 
+}
+//2015.08.10 年.月.日
+function getYMD(dtStr,id){
+var dtArr = dtStr.split("-");
+var dt = new Date(dtArr[0], dtArr[1]-1, dtArr[2]);
+//var time1 = dt.Format("yyyy-MM-dd hh:mm:ss");  
+var time2 = dt.Format("yyyy.MM.dd");
+//var md=time2.substr(8);
+$("#"+id).text(time2);
+return time2; 
+}
+function getMdd(dtStr){
+var dtArr = dtStr.split("-");
+var dt = new Date(dtArr[0], dtArr[1]-1, dtArr[2]);
+//var time1 = dt.Format("yyyy-MM-dd hh:mm:ss");  
+var time2 = dt.Format("MM.dd.yyyy");
+var mdd=time2.substr(0,5); 
+$(".mdd").text(mdd);
+return mdd; 
+}
+</script>
+<script type="text/javascript">
+$(function(){
+   getResData('20180131111623328316406');
+   getResData('20180126080338073701366');
+   getResData('20180125160327087445303');
+   getResData('20180123134309480336389');
+   getResData('20180123105527809190651');
+   getResData('20180123082239260722045');
+    getResData('20180131111623328316406');
+   getResData('20180126080338073701366');
+   getResData('20180125160327087445303');
+    getResData('20180131111623328316406');
+   getResData('20180126080338073701366');
+   getResData('20180125160327087445303');
+    getResData('20171013114018671694622');
+   getResData('20171013113811319312333');
+   getResData('20170426135037682172318');
+    getResData('20180122094629360818957');
+   getResData('20180122094500698445718');
+   getResData('20180118082109668632152');
+    getResData('20180131165025577255633');
+   getResData('20180131160145352871216');
+   getResData('20180131142239010348686');
+   getResData('20180130170408966441444');
+   getResData('20180129161816773787088');
+   getResData('20180129135841090710019');
+   getResData('20180129124803160699665');
+   getResData('20180124135647379219926');
+   getResData('20180122101200011916165');
+   getResData('20180122085022075474186');
+   getResData('20180118164545113198227');
+   getResData('20180116152536628777138');
+   getResData('20180116140400867450424');
+   getResData('20180116095033885800927');
+   getResData('20180111084305184863720');
+   getResData('20180110152251483118112');
+   getResData('20180110151228226372090');
+   getResData('20180109111037550221104');
+   getResData('20180108141528422657506');
+   getResData('20180108160926974892459');
+   getResData('20180105094811583156053');
+   getResData('20180105101024006766857');
+   getResData('20180103092852492467332');
+   getResData('20180102162024241228891');
+   getResData('20171230123953274637324');
+   getResData('20171229101843724622895');
+   getResData('20171229092419352866124');
+   getResData('20171228115035527890120');
+   getResData('20171227134706212139291');
+   getResData('20171227161736711127375');
+   getResData('20171227132624691426898');
+   getResData('20171227154008069649209');
+   getResData('20171228090338347893786');
+   getResData('20171226151549064716633');
+   getResData('20171226135007722329189');
+   getResData('20171226082936462574344');
+   getResData('20171226105530757178036');
+   getResData('20171225144417457881337');
+   getResData('20171225142328431248953');
+   getResData('20171225101620880293069');
+   getResData('20171225111519776567004');
+   getResData('20171225090832996812436');
+   getResData('20171222162811953705377');
+   getResData('20171222142137934577518');
+   getResData('20171221150036466482965');
+   getResData('20171221133432804293678');
+   getResData('20171220084337427283126');
+   getResData('20171220162555094113779');
+   getResData('20171219111943433948992');
+   getResData('20171218170846007549233');
+ })
+function getResData(fwl){
+ jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID="+fwl+"&"+Math.random(), function(data){
+   $(".itemlist_total_"+fwl).empty().text(data);
+ });
+};
+</script></head>
+<body>
+<!--<div class="xiaoqingflag"><span class="close" onClick="$('.xiaoqingflag').hide()"></span><a href="" target="_blank"><img src="images/ad105.jpg" ></a></div>
+<div class="pop">
+ <span class="close" onClick="$('.pop').hide();"><i class="thunews-close"></i></span>
+ <h2>亲爱的朋友们：</h2>
+    <p>　　在清华大学105周年校庆到来之际，新版清华大学新闻网上线了！</p><p>
+　　适应全媒体发展趋势，新版清华大学新闻网将视频、图片、文字深度整合，界面更加友好灵活；页面设计采用多终端自适应技术，能够在PC、平板电脑、手机上实现页面的自适应阅读，呈现最佳的视觉效果。</p><p>
+　　旧版清华大学新闻网将同时停止更新，喜欢访问旧版的朋友可以点击新版上方的“怀念老版”进行访问。</p><p>
+　　了解新版清华大学新闻网的网站结构，可以点击页面底部的“网站地图”进行查看。</p>
+</div>-->
+<header class="clearfix">
+<section class="mainWrap">
+     <div class="topwraper relative clearfix">
+          <div class="ulink">
+                <ul class="clearfix">
+                     <li class="socialnet"><a href="http://weibo.com/tsinghua" class="circle"  title="微博" target="_blamk"><i class="thunews-weibo"></i></a>
+                    <li class="socialnet"><a href="javascript:;" class="circle"  title="微信"><i class="thunews-weixin"></i></a>
+                     <div class="socialwraper"><i><em></em></i><img src="/publish/thunews/images/weixin.jpg"></div>
+                    </li>
+                  </li>
+                      <li class="socialnet"><a href="/publish/thunews/10237/index.html" class="circle"   title="rss订阅"><i class="thunews-rss"></i></a></li>
+                    <li class="mr"><a href="/publish/thunewsen/index.html" class="en" target="_blank">ENGLISH</a></li>
+                                        <li class="thuhome mr"><a href=http://www.tsinghua.edu.cn target="_blank">清华主页</a></li>
+                </ul>
+            </div>
+            <a href="/publish/thunews/index.html" class="logo"><img src="/publish/thunews/images/logo.png" alt="logo"></a>
+            <div class="search">
+               <form id="searchForm" target="_blank">
+<input name="query" type="text" >
+<input name="ie" type="hidden" value="utf8">
+<input name="cid" type="hidden" value="3">
+ <a href="javascript:;" onclick="searchSub();"><i class="thunews-search"></i></a>
+</form>
+            </div>
+        </div>
+        </section>
+<script src="/publish/thunews/js/searchsub.js"></script><nav class="navwrap yahei">
+ <section class="mainWrap">
+  <div id="smenu" class="smenu"><i class="thunews-bars"></i></div>
+  <script type="text/javascript">
+   jQuery(function(){
+    jQuery('#nav li a [class^=item]').removeClass('current');
+    jQuery('#nav li a.item0').addClass('current');
+   });
+  </script>
+  <ul id="nav">
+   <li><a href="/publish/thunews/index.html" class="item0">首页</a></li>
+   <li><a href="/publish/thunews/9648/index.html" class="item9648">头条新闻</a></li>
+   <li><a href="/publish/thunews/10303/index.html" class="item10303">综合新闻</a></li>
+   <li><a href="/publish/thunews/9649/index.html" class="item9649">要闻聚焦</a>
+   <ul>
+    <i><em></em></i>
+    <li><a href="/publish/thunews/9658/index.html#dqwz">时讯快递</a></li>
+    <li><a href="/publish/thunews/9659/index.html#dqwz">学术科研</a></li>
+    <li><a href="/publish/thunews/9660/index.html#dqwz">教育教学</a></li>
+    <li><a href="/publish/thunews/9661/index.html#dqwz">招生就业</a></li>
+    <li><a href="/publish/thunews/9662/index.html#dqwz">交流合作</a></li>
+    <li><a href="/publish/thunews/9663/index.html#dqwz">观点报道</a></li>
+    <li><a href="/publish/thunews/9664/index.html#dqwz">社会服务</a></li>
+   </ul>
+   </li>
+   <li><a href="/publish/thunews/9650/index.html" class="item9650">媒体清华</a></li>
+   <li><a href="/publish/thunews/9652/index.html" class="item9652">图说清华</a></li>
+   <li><a href="http://tv.tsinghua.edu.cn/" target="_blank">视频空间</a></li>
+   <li><a href="/publish/thunews/9656/index.html" class="item9656">清华人物</a></li>
+   <li><a href="/publish/thunews/9654/index.html" class="item9654">校园写意</a>
+   <ul>
+    <i><em></em></i>
+    <li><a href="/publish/thunews/9665/index.html#dqwz">广角透视</a></li>
+    <li><a href="/publish/thunews/9666/index.html#dqwz">校园生活</a></li>
+    <li><a href="/publish/thunews/9667/index.html#dqwz">文化漫谈</a></li>
+    <li><a href="/publish/thunews/9668/index.html#dqwz">清华史苑</a></li>
+    <li><a href="/publish/thunews/9669/index.html#dqwz">高教视点</a></li>
+   </ul>
+   </li>
+   <li><a href="/publish/thunews/9655/index.html" class="item9655">专题新闻</a></li>
+   <li><a href="/publish/thunews/10304/index.html" class="item10304">新闻排行</a></li>
+   <li><a href="/publish/thunews/9657/index.html" class="item9657">新闻合集</a></li>
+   </ul>
+   
+ </section>
+</nav></header>
+<div class="content yahei">
+  <!-- <div class="new106">
+    <div class="mainWrap">
+     <a href="" target="_blank"><img src="/publish/thunews/images/106.jpg"></a>
+    <img src="/publish/thunews/images/106.jpg">
+    </div>
+</div> -->
+ <div class="topcontent clearfix">
+        <div class="mainWrap">
+  <div class="xiaoqinglinkwraper clearfix">
+         <a href="http://news.tsinghua.edu.cn/publish/thunews/10865/index.html" class="xiaoqinglink"></a>
+        </div>
+   <!-- <div class="xiaoqinglinkwraper clearfix">
+         <a href="/publish/thunews/10319/index.html" target="_blank" class="xiaoqinglink"></a>
+         <a href="/publish/thunews/9658/2016/20160422183308641901166/20160422183308641901166_.html" target="_blank" class="xiaoqinghexinglink"></a>
+        </div>-->
+   <section class="colum1 relative">
+     <div class="slideTxtBox">
+     <div class="hd">
+        <ul class="timelist">
+              <li class="t1  active "><i></i> 31<span>2018.01</span></li>
+              <li class="t2 "><i></i> 26<span>2018.01</span></li>
+              <li class="t3 "><i></i> 25<span>2018.01</span></li>
+              <li class="t4 "><i></i> 24<span>2018.01</span></li>
+              <li class="t5 "><i></i> 23<span>2018.01</span></li>
+              <li class="t6 "><i></i> 23<span>2018.01</span></li>
+             </ul>
+     </div>
+     <div class="forwnxt">
+      <span class="forward"><a><i class="thunews-angle-left"></i></a></span>
+      <span class="next"><a><i class="thunews-angle-right"></i></a></span>
+     </div>
+     <div class="bd">
+      <ul class="headlinelist">
+                <li>
+        <figure>
+         <a href="/publish/thunews/9648/2018/20180131111623328316406/20180131111623328316406_.html"><img src="/publish/thunews/9658/20180131111623328316406/20180131112108818627231.jpg" width="650" height="400" /></a>
+         <div class="figurewrap">
+           <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180131111623328316406"></span></div><a href="/publish/thunews/9658/index.html#dqwz " class="node">时讯快递</a></aside>
+           <figcaption><h2><a href="/publish/thunews/9648/2018/20180131111623328316406/20180131111623328316406_.html" class="jiequ">清华师生开展“重走总书记初心之路”社会实践</a></h2></figcaption>
+           <p class="jiequ"> 寒假期间，清华大学团委将党的十九大精神学习与实践育人相结合，组织开展“重走总书记初心之路”社会实践，10支支队、100余名师生在假期分赴陕西延安梁家河、河北石家庄正定、福建宁德、浙江嘉兴等习近平总书记曾经工作和调研的重点地区，调研国情民情，在习近平新时代中国特色社会主义思想萌发、形成、实践的地方追寻党的初心。 ...</p>
+             </div>
+        </figure>
+       </li>
+                    <li>
+        <figure>
+         <a href="/publish/thunews/9648/2018/20180126080338073701366/20180126080338073701366_.html"><img src="/publish/thunews/9658/20180126080338073701366/20180126231250037580241.jpg" width="650" height="400" /></a>
+         <div class="figurewrap">
+           <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180126080338073701366"></span></div><a href="/publish/thunews/9658/index.html#dqwz " class="node">时讯快递</a></aside>
+           <figcaption><h2><a href="/publish/thunews/9648/2018/20180126080338073701366/20180126080338073701366_.html" class="jiequ">清华大学校长邱勇率团前往瑞士 推动与全球多领域交流合作</a></h2></figcaption>
+           <p class="jiequ"> 当地时间1月22日，清华大学校长邱勇率团抵达瑞士达沃斯，开启2018年首场出访活动，在三天内连续出席一系列多边和双边交流活动，与全球政界、学界、商界、国际组织领袖洽谈合作，为全球战略实施打开新的局面。 ...</p>
+             </div>
+        </figure>
+       </li>
+                    <li>
+        <figure>
+         <a href="/publish/thunews/9648/2018/20180125160327087445303/20180125160327087445303_.html"><img src="/publish/thunews/9658/20180125160327087445303/20180125160653214256265.jpg" width="650" height="400" /></a>
+         <div class="figurewrap">
+           <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180125160327087445303"></span></div><a href="/publish/thunews/9658/index.html#dqwz " class="node">时讯快递</a></aside>
+           <figcaption><h2><a href="/publish/thunews/9648/2018/20180125160327087445303/20180125160327087445303_.html" class="jiequ">清华大学举办“一带一路达沃斯论坛”</a></h2></figcaption>
+           <p class="jiequ"> 1月24日，清华大学与中国国家发展和改革委员会国际合作中心、联合国贸易与发展会议在达沃斯共同举办第二届“一带一路达沃斯论坛”，围绕“新型全球化与区域合作”的主题，邀请 “一带一路”沿线国家的政要、工商领袖、专家学者，就“一带一路: 互利共赢、共享成果”“澜湄合作:中国东盟合作新时代”进行深入讨论。 ...</p>
+             </div>
+        </figure>
+       </li>
+                    <li>
+        <figure>
+         <a href="/publish/thunews/9648/2018/20180123134309480336389/20180123134309480336389_.html"><img src="/publish/thunews/9659/20180123134309480336389/20180123134430343746953.jpg" width="650" height="400" /></a>
+         <div class="figurewrap">
+           <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180123134309480336389"></span></div><a href="/publish/thunews/9659/index.html#dqwz " class="node">学术科研</a></aside>
+           <figcaption><h2><a href="/publish/thunews/9648/2018/20180123134309480336389/20180123134309480336389_.html" class="jiequ">清华药学院肖百龙与生命学院李雪明课题组合作发文 揭示细胞“感知”机械力的精巧分子机器结构与机制</a></h2></figcaption>
+           <p class="jiequ">1月22日，《自然》期刊在线发表了清华大学肖百龙与李雪明课题组合作撰写的《Piezo1离子通道的结构与机械门控机制》（Structure and Mechanogating Mechanism of the Piezo1 Channel）研究论文。论文解析了哺乳动物机械门控Piezo1离子通道的高分辨率三维结构，揭示了其参与机械力感受与传递的关键功能位点，进而首次提出了Piezo通道以类似杠杆原理 ...</p>
+             </div>
+        </figure>
+       </li>
+                    <li>
+        <figure>
+         <a href="/publish/thunews/9648/2018/20180123105527809190651/20180123105527809190651_.html"><img src="/publish/thunews/9658/20180123105527809190651/20180123113336110800911.jpg" width="650" height="400" /></a>
+         <div class="figurewrap">
+           <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180123105527809190651"></span></div><a href="/publish/thunews/9658/index.html#dqwz " class="node">时讯快递</a></aside>
+           <figcaption><h2><a href="/publish/thunews/9648/2018/20180123105527809190651/20180123105527809190651_.html" class="jiequ">清华召开首届年度科研创新交流会  发布年度亮点成果及纪念梅贻琦学术论文奖名单</a></h2></figcaption>
+           <p class="jiequ"> 1月18日下午，清华大学主楼接待厅内，王玉明、岳光溪、南策文、段文晖、周济等院士，薛澜、万俊人、阎学通、黄德宽、崔建远、汪晖等教授共百余位师生代表，与校长邱勇、校党委副书记邓卫、副校长薛其坤等分桌围座，参加学校首次举办的年度科研创新交流会，听取科研工作总结、交流科研心得、观看学生科技成果展示。交流会由邓卫主持。 ...</p>
+             </div>
+        </figure>
+       </li>
+                    <li>
+        <figure>
+         <a href="/publish/thunews/9648/2018/20180123082239260722045/20180123082239260722045_.html"><img src="/publish/thunews/9659/20180123082239260722045/20180123083157874630855.jpg" width="650" height="400" /></a>
+         <div class="figurewrap">
+           <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180123082239260722045"></span></div><a href="/publish/thunews/9659/index.html#dqwz " class="node">学术科研</a></aside>
+           <figcaption><h2><a href="/publish/thunews/9648/2018/20180123082239260722045/20180123082239260722045_.html" class="jiequ">清华大学颁发首批文科资深教授证书 座谈文科发展和“双一流”建设</a></h2></figcaption>
+           <p class="jiequ"> 文科资深教授是清华大学在哲学社会科学领域设立的最高学术荣誉称号。万俊人、王明旨、刘巨德、杜大恺、李强、李学勤、吴潜涛、汪晖、陈来、胡鞍钢 、柳冠中、钱颖一、阎学通、崔建远、彭林、韩美林、谢维和、薛澜等18位教师获选，他们来自全校8个文科院系、13个一级学科，平均年龄68岁。 ...</p>
+             </div>
+        </figure>
+       </li>
+                </ul>
+     </div>
+    </div>
+    <script type="text/javascript">
+    $(function(){   
+             $('.slideTxtBox .headlinelist').slick({
+              infinite: true,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              autoplay: true,
+              centerMode: false,
+           prevArrow:".slideTxtBox .forwnxt .forward",
+           nextArrow:".slideTxtBox .forwnxt .next"
+          });
+             $('.slideTxtBox .headlinelist').on('beforeChange', function(event, slick, currentSlide,nextSlide){
+           $(".slideTxtBox .timelist li").removeClass("active");
+          $(".slideTxtBox .timelist li").eq(nextSlide).addClass("active");
+      });
+             $('.slideTxtBox .headlinelist').on('setPosition', function(event, slick, currentSlide, nextSlide){
+         updateforw()
+       });
+           $(".slideTxtBox .timelist li").click(function(){
+       $('.slideTxtBox .headlinelist').slick("slickGoTo",$(this).index());
+     })
+    })
+            
+            </script>
+        </section>
+        <section class="colum2">
+         <div class="newsSwitchBox">
+             <div class="hd">
+                <ul class="switch clearfix"><li class="current"><i class="thunews-area-chart"></i>综合新闻</li><li><i class="thunews-camera"></i>媒体清华</li></ul>
+            </div>
+            <div class="bd">
+                <ul class="nlist">
+     
+             <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.31</span>
+                        <figcaption><h3><a href="/publish/thunews/10303/2018/20180131160145352871216/20180131160145352871216_.html" class="jiequ">6位清华校友入选《麻省理工科技评论》中国区“35 岁以下科技创新 35 人”榜单</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.31</span>
+                        <figcaption><h3><a href="/publish/thunews/10303/2018/20180131154245707771110/20180131154245707771110_.html" class="jiequ">邓卫带队走访人民日报社</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.31</span>
+                        <figcaption><h3><a href="/publish/thunews/10303/2018/20180131142239010348686/20180131142239010348686_.html" class="jiequ">清华大学学生“暖·爱”协会寒假奔赴云南临沧社会实践</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.31</span>
+                        <figcaption><h3><a href="/publish/thunews/10303/2018/20180130170408966441444/20180130170408966441444_.html" class="jiequ">清华张一慧课题组在非常规可重构三维细微观结构及微电子器件方面取得重要进展</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.31</span>
+                        <figcaption><h3><a href="/publish/thunews/10303/2018/20180131111623328316406/20180131111623328316406_.html" class="jiequ">清华师生开展“重走总书记初心之路”社会实践</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.30</span>
+                        <figcaption><h3><a href="/publish/thunews/10303/2018/20180130153809402428918/20180130153809402428918_.html" class="jiequ">清华大学博士生讲师团——用青春范讲党课</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.30</span>
+                        <figcaption><h3><a href="/publish/thunews/10303/2018/20180130154223202930099/20180130154223202930099_.html" class="jiequ">清华美院教授陈楠钻研甲骨文19年 将其制作成表情包</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.30</span>
+                        <figcaption><h3><a href="/publish/thunews/10303/2018/20180129164517094466652/20180129164517094466652_.html" class="jiequ">清华大学召开2017年度产学研工作研讨会</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.29</span>
+                        <figcaption><h3><a href="/publish/thunews/10303/2018/20180129163436799750536/20180129163436799750536_.html" class="jiequ">清华召开青年教师科研工作座谈会</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.29</span>
+                        <figcaption><h3><a href="/publish/thunews/10303/2018/20180129155958451452477/20180129155958451452477_.html" class="jiequ">笔游江山——袁运甫的写生</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                                        <li class="more"><a href="/publish/thunews/10303/index.html">更多 <i class="thunews-angle-right"></i></a></li>
+                </ul> 
+                 <ul class="nlist" id="thunews_xwph">
+             <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.31</span>
+                        <figcaption><h3><a href="/publish/thunews/9650/2018/20180131163509723430886/20180131163509723430886_.html" class="jiequ">温宗国：把垃圾分类纳入法治化轨道</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.30</span>
+                        <figcaption><h3><a href="/publish/thunews/9650/2018/20180130153809402428918/20180130153809402428918_.html" class="jiequ">清华大学博士生讲师团——用青春范讲党课</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.30</span>
+                        <figcaption><h3><a href="/publish/thunews/9650/2018/20180130154223202930099/20180130154223202930099_.html" class="jiequ">清华美院教授陈楠钻研甲骨文19年 将其制作成表情包</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.29</span>
+                        <figcaption><h3><a href="/publish/thunews/9650/2018/20180129155958451452477/20180129155958451452477_.html" class="jiequ">笔游江山——袁运甫的写生</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.29</span>
+                        <figcaption><h3><a href="/publish/thunews/9650/2018/20180129155540009438320/20180129155540009438320_.html" class="jiequ">清华大学发布《全球创业观察2016/2017中国报告》</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.29</span>
+                        <figcaption><h3><a href="/publish/thunews/9650/2018/20180129154950617889802/20180129154950617889802_.html" class="jiequ">杨帆：航班“动中通” 国产天线显神通</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.29</span>
+                        <figcaption><h3><a href="/publish/thunews/9650/2018/20180129154431754795327/20180129154431754795327_.html" class="jiequ">长城工程科技会议第四次会议举行</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.26</span>
+                        <figcaption><h3><a href="/publish/thunews/9650/2018/20180126134300129424812/20180126134300129424812_.html" class="jiequ">清华大学：助力京昆艺术传承与发展</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.26</span>
+                        <figcaption><h3><a href="/publish/thunews/9650/2018/20180126134059722111070/20180126134059722111070_.html" class="jiequ">“清华系”博士后站落户中新生态城</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                            <li class="showonmobile"><figure>
+                        <span class="time"><i class="thunews-clock-o"></i>2018.01.26</span>
+                        <figcaption><h3><a href="/publish/thunews/9650/2018/20180126133705104802329/20180126133705104802329_.html" class="jiequ">管晓宏：会吹长笛的院士</a></h3></figcaption>
+                        </figure>
+                    </li>
+                                                        <li class="more"><a href="/publish/thunews/9650/index.html">更多 <i class="thunews-angle-right"></i></a></li>
+                   
+                </ul>
+            </div>
+           </div>
+        </section>
+        </div>
+    </div>
+    <div class="bottomcontent">
+        <div class="mainWrap clearfix">
+            <section class="colum1">
+                    <ul class="switch clearfix"><li class="current nv"><i class="thunews-play-circle"></i>视频速递</li><li class="nv"><i class="thunews-video-camera"></i>我是拍客</li></ul>
+                  <!--vdo1-->
+                        <div class="vdowrap">   
+                                <div class="slideVdo1Box">
+                                <div class="forwnxt">
+                                   <span class="forward"><a><i class="thunews-angle-left"></i></a></span>
+         <span class="next"><a><i class="thunews-angle-right"></i></a></span>
+                                </div>
+                                    <div class="bd">
+                                        <ul>
+             
+                                        <li>
+                                            <figure class="vdoheadline">
+           
+                                                    <a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180102151401216414999/20180102151401216414999_.html" class="vdeoa"  target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/10154/20180102151401216414999/20180102151426435664578.jpg' width="420" height="258" /></a>
+                                              <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180102151401216414999/20180102151401216414999_.html" class="jiequ" target="_blank">2017，倾听清华声音</a></h3></figcaption>
+            
+                                                    <p class="jiequ"> 清华故事2017，倾听清华声音 ...</p>
+            
+                                                    <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180102151401216414999"></span></div><span class="time"><i class="thunews-clock-o"></i>2018.01.02</span></aside>
+                                            </figure>
+                                        </li>
+                                            
+                                        <li>
+                                            <figure class="vdoheadline">
+           
+                                                    <a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180122094629360818957/20180122094629360818957_.html" class="vdeoa"  target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9701/20180122094629360818957/20180123133417433945392.jpg' width="420" height="258" /></a>
+                                              <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180122094629360818957/20180122094629360818957_.html" class="jiequ" target="_blank">清华大学召开全校教学工作总结会</a></h3></figcaption>
+            
+                                                    <p class="jiequ">1月17日下午，清华大学2017～2018学年度秋季学期全校教学工作总结会在主楼后厅召开。会议对年度 ...</p>
+            
+                                                    <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180122094629360818957"></span></div><span class="time"><i class="thunews-clock-o"></i>2018.01.22</span></aside>
+                                            </figure>
+                                        </li>
+                                            
+                                        <li>
+                                            <figure class="vdoheadline">
+           
+                                                    <a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180122094500698445718/20180122094500698445718_.html" class="vdeoa"  target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9700/20180122094500698445718/20180123133514499554979.jpg' width="420" height="258" /></a>
+                                              <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180122094500698445718/20180122094500698445718_.html" class="jiequ" target="_blank">清华建立文科资深教授制度 首批18位学者获此殊荣</a></h3></figcaption>
+            
+                                                    <p class="jiequ">1月21日，首批文科资深教授证书颁发仪式举。校党委书记陈旭宣读首批18位文科资深教授名单，校长邱勇为 ...</p>
+            
+                                                    <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180122094500698445718"></span></div><span class="time"><i class="thunews-clock-o"></i>2018.01.22</span></aside>
+                                            </figure>
+                                        </li>
+                                                                                 </ul>
+                                    </div>
+                                </div>
+                                  <script type="text/javascript">
+          $(function(){
+             $('.slideVdo1Box .bd ul').slick({
+                     infinite: true,
+                     slidesToShow: 1,
+                     slidesToScroll: 1,
+                     autoplay: true,
+                     centerMode: false,
+                  prevArrow:".slideVdo1Box .forwnxt .forward",
+                  nextArrow:".slideVdo1Box .forwnxt .next"
+                 });
+           $('.slideVdo1Box .bd ul .headlinelist').on('setPosition', function(event, slick, currentSlide, nextSlide){
+             updateforw()
+           });
+          })
+                   
+                                </script>
+                                <ul class="v1list" id="v1list">
+                                                                                                                                                                                             <li class="clearfix showonmobile ">
+         
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180118082109668632152/20180118082109668632152_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9700/20180118082109668632152/20180119122922106259045.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2018.01.19</span>
+            
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180118082109668632152/20180118082109668632152_.html" class="jiequ" target="_blank">清华大学召开习近平新时代中国特色社会主义思想研究院成立大会</a></h3></figcaption>
+           
+                                                <p class="jiequ">1月15日下午，清华大学习近平新时代中国特色社会主义思想研究院成立大会在主楼召开。中央马克思主义理论 ...</p>
+          
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                          <li class="clearfix showonmobile ">
+         
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180118082019178979202/20180118082019178979202_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9699/20180118082019178979202/20180119122834109426786.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2018.01.19</span>
+            
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180118082019178979202/20180118082019178979202_.html" class="jiequ" target="_blank">清华召开党风校风监督员征求意见座谈会和新一届党风校风监督员聘任会</a></h3></figcaption>
+           
+                                                <p class="jiequ">1月9日上午，清华大学党风校风监督员征求意见座谈会在工字厅召开，校党委书记陈旭，党委副书记、纪委书记 ...</p>
+          
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                          <li class="clearfix ">
+         
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180118081938809246291/20180118081938809246291_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9699/20180118081938809246291/20180119122745403256599.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2018.01.19</span>
+            
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180118081938809246291/20180118081938809246291_.html" class="jiequ" target="_blank">清华大学举行2017年度校机关职能部门工作交流评估会</a></h3></figcaption>
+           
+                                                <p class="jiequ">1月12日，清华大学2017年度校机关职能部门工作交流评估会在主楼举行。校领导邱勇、陈旭、薛其坤、杨 ...</p>
+          
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                          <li class="clearfix ">
+         
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180118081821052153431/20180118081821052153431_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9700/20180118081821052153431/20180119122655546695572.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2018.01.19</span>
+            
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180118081821052153431/20180118081821052153431_.html" class="jiequ" target="_blank">“清华三农论坛2018”聚焦乡村振兴战略</a></h3></figcaption>
+           
+                                                <p class="jiequ">1月13日，“清华三农论坛2018”在清华大学举行。全国政协常委、经济委员会副主任，中央农村工作领导 ...</p>
+          
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                          <li class="clearfix ">
+         
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180118081730422735725/20180118081730422735725_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9705/20180118081730422735725/20180119122559924907343.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2018.01.19</span>
+            
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180118081730422735725/20180118081730422735725_.html" class="jiequ" target="_blank">蒋南翔奖学基金捐赠仪式在清华举行</a></h3></figcaption>
+           
+                                                <p class="jiequ">1月14日下午，蒋南翔奖学基金捐赠仪式在清华大学工字厅举行。原中共中央委员、原最高人民检察院检察长、 ...</p>
+          
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                          <li class="clearfix ">
+         
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180115100031214192246/20180115100031214192246_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9699/20180115100031214192246/20180116084817860205983.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2018.01.15</span>
+            
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180115100031214192246/20180115100031214192246_.html" class="jiequ" target="_blank">国务院副总理刘延东考察清华大学</a></h3></figcaption>
+           
+                                                <p class="jiequ">1月10日下午，国务院副总理刘延东来到清华大学，亲切会见清华师生代表，并考察调研航空发动机研究院和苏 ...</p>
+          
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                          <li class="clearfix ">
+         
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180115095940771767772/20180115095940771767772_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9699/20180115095940771767772/20180116084932990211004.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2018.01.15</span>
+            
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180115095940771767772/20180115095940771767772_.html" class="jiequ" target="_blank">清华大学举行2017年度学校领导班子和成员述职测评会</a></h3></figcaption>
+           
+                                                <p class="jiequ">1月10日上午，清华大学2017年度学校领导班子和成员述职测评会在主楼后厅举行。党委书记陈旭、校长邱 ...</p>
+          
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                          <li class="clearfix ">
+         
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180115095911317788330/20180115095911317788330_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9699/20180115095911317788330/20180116085022478407814.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2018.01.15</span>
+            
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/10212/2018/20180115095911317788330/20180115095911317788330_.html" class="jiequ" target="_blank">清华大学举行教代会代表征求意见座谈会</a></h3></figcaption>
+           
+                                                <p class="jiequ">1月11日下午，清华大学教代会代表征求意见座谈会在工字厅举行。校长邱勇与来自9个院系的10名教师针对 ...</p>
+          
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                             </ul>
+                                 <a href="http://tv.tsinghua.edu.cn" class="more showonmobile"  target="_blank">更多 <i class="thunews-angle-right"></i></a>
+                                </div>
+                                <!--vdo1 end-->
+                                <!--vdo2-->
+                         <div class="vdowrap">  
+                             <div class="slideVdo2Box">
+                                <div class="forwnxt">
+                                   <span class="forward"><a><i class="thunews-angle-left"></i></a></span>
+                     <span class="next"><a><i class="thunews-angle-right"></i></a></span>
+                                </div>
+                                    <div class="bd">
+                                        <ul>
+                                                                                <li>
+                                            <figure class="vdoheadline">
+                                                    <a href="http://tv.tsinghua.edu.cn/publish/video/9689/2017/20171013114018671694622/20171013114018671694622_.html" class="vdeoa"  target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9694/20171013114018671694622/20171013114125085918397.jpg' width="420" height="258" /></a>
+                                              <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/9689/2017/20171013114018671694622/20171013114018671694622_.html" class="jiequ" target="_blank">《关于中亚的一些事》</a></h3></figcaption>
+           
+                                                    <p class="jiequ">  ...</p>
+            
+                                                    <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20171013114018671694622"></span></div><span class="time"><i class="thunews-clock-o"></i>2017.10.13</span></aside>
+                                            </figure>
+                                        </li>
+                                                                                 <li>
+                                            <figure class="vdoheadline">
+                                                    <a href="http://tv.tsinghua.edu.cn/publish/video/9689/2017/20171013113811319312333/20171013113811319312333_.html" class="vdeoa"  target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9694/20171013113811319312333/20171013113829617423149.jpg' width="420" height="258" /></a>
+                                              <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/9689/2017/20171013113811319312333/20171013113811319312333_.html" class="jiequ" target="_blank">《丝路新探》</a></h3></figcaption>
+           
+                                                    <p class="jiequ">  ...</p>
+            
+                                                    <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20171013113811319312333"></span></div><span class="time"><i class="thunews-clock-o"></i>2017.10.13</span></aside>
+                                            </figure>
+                                        </li>
+                                                                                 <li>
+                                            <figure class="vdoheadline">
+                                                    <a href="http://tv.tsinghua.edu.cn/publish/video/9689/2017/20170426135037682172318/20170426135037682172318_.html" class="vdeoa"  target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9690/20170426135037682172318/20170426135056719891517.jpg' width="420" height="258" /></a>
+                                              <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/9689/2017/20170426135037682172318/20170426135037682172318_.html" class="jiequ" target="_blank">延时摄影：清华园</a></h3></figcaption>
+           
+                                                    <p class="jiequ">  ...</p>
+            
+                                                    <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20170426135037682172318"></span></div><span class="time"><i class="thunews-clock-o"></i>2017.04.26</span></aside>
+                                            </figure>
+                                        </li>
+                                                                                 </ul>
+                                    </div>
+                                </div>
+                                  <script type="text/javascript">
+         $(function(){
+             $('.slideVdo2Box .bd ul').slick({
+                     infinite: true,
+                     slidesToShow: 1,
+                     slidesToScroll: 1,
+                     autoplay: true,
+                     centerMode: false,
+                  prevArrow:".slideVdo2Box .forwnxt .forward",
+                  nextArrow:".slideVdo2Box .forwnxt .next"
+                 });
+           $('.slideVdo2Box .bd ul .headlinelist').on('setPosition', function(event, slick, currentSlide, nextSlide){
+             updateforw()
+           });
+          })
+            
+                                </script>
+                                <ul class="v2list" id="v2list">
+                                                                                                                                                                                                                        <li class="clearfix showonmobile ">
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/9689/2017/20170426134648043900275/20170426134648043900275_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9690/20170426134648043900275/20170426134819546616146.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2017.04.26</span>
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/9689/2017/20170426134648043900275/20170426134648043900275_.html" class="jiequ" target="_blank">艺术博物馆</a></h3></figcaption>
+           
+                                                <p class="jiequ">清华大学艺术博物馆寄托着几代清华人为传承民族艺术、沟通中西文化交流的美好心愿。博物馆的最早雏形可追溯 ...</p>
+           
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                          <li class="clearfix showonmobile ">
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/9689/2017/20170424094432362662910/20170424094432362662910_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/10143/20170424094432362662910/20170424094550763882052.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2017.04.24</span>
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/9689/2017/20170424094432362662910/20170424094432362662910_.html" class="jiequ" target="_blank">蒲明书（1965力学）的配乐诗朗诵：“半个世纪清华情”</a></h3></figcaption>
+           
+                                                <p class="jiequ">今天是清华106周岁校庆日。为表达学子对母校生日的祝福，特献上重新录制的视频节目一一配乐诗朗诵《半个 ...</p>
+           
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                          <li class="clearfix ">
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/9689/2016/20161114124424197876239/20161114124424197876239_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9689/20161114124424197876239/20161114124433720434342.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2016.11.14</span>
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/9689/2016/20161114124424197876239/20161114124424197876239_.html" class="jiequ" target="_blank">与时光在一起的女孩</a></h3></figcaption>
+           
+                                                <p class="jiequ">  ...</p>
+           
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                          <li class="clearfix ">
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/9689/2016/20161114124303095425825/20161114124303095425825_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9689/20161114124303095425825/20161114124314075982763.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2016.11.14</span>
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/9689/2016/20161114124303095425825/20161114124303095425825_.html" class="jiequ" target="_blank">南京故事</a></h3></figcaption>
+           
+                                                <p class="jiequ">  ...</p>
+           
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                          <li class="clearfix ">
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/9689/2016/20161114124055790424221/20161114124055790424221_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9689/20161114124055790424221/20161114124105763250923.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2016.11.14</span>
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/9689/2016/20161114124055790424221/20161114124055790424221_.html" class="jiequ" target="_blank">传薪</a></h3></figcaption>
+           
+                                                <p class="jiequ">  ...</p>
+           
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                          <li class="clearfix ">
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/9689/2016/20161114123828675369650/20161114123828675369650_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9689/20161114123828675369650/20161114123838224473132.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2016.11.14</span>
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/9689/2016/20161114123828675369650/20161114123828675369650_.html" class="jiequ" target="_blank">君卿辞</a></h3></figcaption>
+           
+                                                <p class="jiequ">  ...</p>
+           
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                          <li class="clearfix ">
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/9689/2016/20161114123643379537421/20161114123643379537421_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9689/20161114123643379537421/20161114123655923110163.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2016.11.14</span>
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/9689/2016/20161114123643379537421/20161114123643379537421_.html" class="jiequ" target="_blank">百年苍黄</a></h3></figcaption>
+           
+                                                <p class="jiequ">  ...</p>
+           
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                          <li class="clearfix ">
+                                        <figure>
+                                         <a href="http://tv.tsinghua.edu.cn/publish/video/9689/2016/20161114123421515917481/20161114123421515917481_.html" class="vdeoasmall" target="_blank"><b></b><img src='http://tv.tsinghua.edu.cn/publish/video/9689/20161114123421515917481/20161114123430986316889.jpg' /></a>
+                                            <aside>
+                                                <span class="time"><i class="thunews-clock-o"></i>2016.11.14</span>
+                                                <figcaption><h3><a href="http://tv.tsinghua.edu.cn/publish/video/9689/2016/20161114123421515917481/20161114123421515917481_.html" class="jiequ" target="_blank">刘和珍之殇</a></h3></figcaption>
+           
+                                                <p class="jiequ">  ...</p>
+           
+                                            </aside>
+                                            
+                                        </figure>
+                                    </li>
+                                                                                 
+                                </ul>
+                                 <a href="http://tv.tsinghua.edu.cn/publish/video/9689/index.html" class="more showonmobile" target="_blank">更多 <i class="thunews-angle-right"></i></a>
+                               </div>
+                                <!--vdo2-->
+                              
+                          
+            </section>
+            <section class="colum2">
+               <ul class="switch clearfix"><li class="current"><i class="thunews-star"></i>精彩推荐</li></ul>
+               <div id="warterflow"  style="position:relative">
+                  <ul class="elist" id="elist">
+                
+      <li>
+       <figure>
+       <a href="/publish/thunews/9945/2018/20180131165025577255633/20180131165025577255633_.html"><img src="/publish/thunews/9660/20180131165025577255633/20180131170414291343763.jpg" width="256" height="158" /></a>
+       <div class="figurewrap">
+       <aside><a href="/publish/thunews/9660/index.html#dqwz " class="node">教育教学</a></aside>
+       <figcaption><h3><a href="/publish/thunews/9945/2018/20180131165025577255633/20180131165025577255633_.html" class="jiequ">英国帝国理工学院副校长一行来校调研在线教育和混合式教学工作</a></h3></figcaption>
+            <p class="jiequ">1月29日，英国帝国理工学院副校长包秀堤（Simone Buitendijk）教授一行与清华在线教育 ...</p>
+           <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180131165025577255633"></span></div><span class="time"><i class="thunews-clock-o"></i>2018.01.31</span></aside>
+       </div>
+       </figure>
+      </li>
+         
+   
+  
+   
+                 
+      <li>
+       <figure>
+       <a href="/publish/thunews/9945/2018/20180131160145352871216/20180131160145352871216_.html"><img src="/publish/thunews/9658/20180131160145352871216/20180131161905361835668.jpg" width="256" height="158" /></a>
+       <div class="figurewrap">
+       <aside><a href="/publish/thunews/9658/index.html#dqwz " class="node">时讯快递</a></aside>
+       <figcaption><h3><a href="/publish/thunews/9945/2018/20180131160145352871216/20180131160145352871216_.html" class="jiequ">6位清华校友入选《麻省理工科技评论》中国区“35 岁以下科技创新 35 人”榜单</a></h3></figcaption>
+            <p class="jiequ">他们是2005级电子系校友、麻省理工学院-哈佛大学布罗德研究所研究员丛乐，清华大学计算机科学与技术系 ...</p>
+           <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180131160145352871216"></span></div><span class="time"><i class="thunews-clock-o"></i>2018.01.31</span></aside>
+       </div>
+       </figure>
+      </li>
+         
+   
+  
+   
+                 
+      <li>
+       <figure>
+       <a href="/publish/thunews/9945/2018/20180131142239010348686/20180131142239010348686_.html"><img src="/publish/thunews/9665/20180131142239010348686/20180131142844555888123.jpg" width="256" height="158" /></a>
+       <div class="figurewrap">
+       <aside><a href="/publish/thunews/9665/index.html#dqwz " class="node">广角透视</a></aside>
+       <figcaption><h3><a href="/publish/thunews/9945/2018/20180131142239010348686/20180131142239010348686_.html" class="jiequ">清华大学学生“暖·爱”协会寒假奔赴云南临沧社会实践</a></h3></figcaption>
+            <p class="jiequ">1月17日至2月23日，由清华大学学生“暖·爱”协会、电机系“灯塔计划”共9名同学组成的“暖·爱”住 ...</p>
+           <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180131142239010348686"></span></div><span class="time"><i class="thunews-clock-o"></i>2018.01.31</span></aside>
+       </div>
+       </figure>
+      </li>
+         
+   
+  
+   
+                 
+      <li>
+       <figure>
+       <a href="/publish/thunews/9945/2018/20180130170408966441444/20180130170408966441444_.html"><img src="/publish/thunews/9659/20180130170408966441444/20180130171349458677025.jpg" width="256" height="158" /></a>
+       <div class="figurewrap">
+       <aside><a href="/publish/thunews/9659/index.html#dqwz " class="node">学术科研</a></aside>
+       <figcaption><h3><a href="/publish/thunews/9945/2018/20180130170408966441444/20180130170408966441444_.html" class="jiequ">清华张一慧课题组在非常规可重构三维细微观结构及微电子器件方面取得重要进展</a></h3></figcaption>
+            <p class="jiequ">1月29日，清华大学航天航空学院张一慧课题组在《自然-材料》期刊以长文形式发表了题为《基于多稳态屈曲 ...</p>
+           <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180130170408966441444"></span></div><span class="time"><i class="thunews-clock-o"></i>2018.01.31</span></aside>
+       </div>
+       </figure>
+      </li>
+         
+   
+  
+   
+                 
+      <li>
+       <figure>
+       <a href="/publish/thunews/9945/2018/20180129161816773787088/20180129161816773787088_.html"><img src="/publish/thunews/9659/20180129161816773787088/20180129161918782846797.jpg" width="256" height="158" /></a>
+       <div class="figurewrap">
+       <aside><a href="/publish/thunews/9659/index.html#dqwz " class="node">学术科研</a></aside>
+       <figcaption><h3><a href="/publish/thunews/9945/2018/20180129161816773787088/20180129161816773787088_.html" class="jiequ">第一届危爆物品扫描探测技术青年学者论坛举行</a></h3></figcaption>
+            <p class="jiequ">1月24日-25日，第一届危爆物品扫描探测技术青年学者论坛在清华大学甲所举办。本次研讨会由危爆物品扫 ...</p>
+           <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180129161816773787088"></span></div><span class="time"><i class="thunews-clock-o"></i>2018.01.29</span></aside>
+       </div>
+       </figure>
+      </li>
+         
+   
+  
+   
+                 
+      <li>
+       <figure>
+       <a href="/publish/thunews/9945/2018/20180129135841090710019/20180129135841090710019_.html"><img src="/publish/thunews/9662/20180129135841090710019/20180129140454241583731.jpg" width="256" height="158" /></a>
+       <div class="figurewrap">
+       <aside><a href="/publish/thunews/9662/index.html#dqwz " class="node">交流合作</a></aside>
+       <figcaption><h3><a href="/publish/thunews/9945/2018/20180129135841090710019/20180129135841090710019_.html" class="jiequ">清华大学肖贵清教授受邀赴中国驻旧金山总领事馆宣讲十九大精神</a></h3></figcaption>
+            <p class="jiequ">受中国驻旧金山总领事馆邀请，1月25日下午，清华大学习近平新时代中国特色社会主义思想研究院副院长、马 ...</p>
+           <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180129135841090710019"></span></div><span class="time"><i class="thunews-clock-o"></i>2018.01.29</span></aside>
+       </div>
+       </figure>
+      </li>
+         
+   
+  
+   
+                 
+      <li>
+       <figure>
+       <a href="/publish/thunews/9945/2018/20180129124803160699665/20180129124803160699665_.html"><img src="/publish/thunews/9659/20180129124803160699665/20180129125422599773262.jpg" width="256" height="158" /></a>
+       <div class="figurewrap">
+       <aside><a href="/publish/thunews/9659/index.html#dqwz " class="node">学术科研</a></aside>
+       <figcaption><h3><a href="/publish/thunews/9945/2018/20180129124803160699665/20180129124803160699665_.html" class="jiequ">清华-伯克利深圳学院第三届尖端科技峰会在伯克利加州大学举办</a></h3></figcaption>
+            <p class="jiequ">当地时间1月23日，清华-伯克利深圳学院第三届尖端科技峰会在美国伯克利加州大学召开，峰会为期两天，主 ...</p>
+           <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180129124803160699665"></span></div><span class="time"><i class="thunews-clock-o"></i>2018.01.29</span></aside>
+       </div>
+       </figure>
+      </li>
+         
+   
+  
+   
+                 
+      <li>
+       <figure>
+       <a href="/publish/thunews/9945/2018/20180124135647379219926/20180124135647379219926_.html"><img src="/publish/thunews/9661/20180124135647379219926/20180124161155494848270.jpg" width="256" height="158" /></a>
+       <div class="figurewrap">
+       <aside><a href="/publish/thunews/9661/index.html#dqwz " class="node">招生就业</a></aside>
+       <figcaption><h3><a href="/publish/thunews/9945/2018/20180124135647379219926/20180124135647379219926_.html" class="jiequ">清华大学举办工程科学创新挑战营</a></h3></figcaption>
+            <p class="jiequ">1月19-23日，清华大学部分工科院系联合举办2018年工程科学创新挑战营，近600名全国优秀中学生 ...</p>
+           <aside><div class="num"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i><span class="itemlist_total_20180124135647379219926"></span></div><span class="time"><i class="thunews-clock-o"></i>2018.01.24</span></aside>
+       </div>
+       </figure>
+      </li>
+         
+   
+  
+   
+            </ul>
+               </div>
+                <a href="javascript:;" class="mobilemore" id="mobilemore">更多精彩推荐</a>
+            </section>
+        </div>
+        <div class="mainWrap"><a href="javascript:;" class="loadmore" id="loadmore">查看更多</a></div>
+    </div>
+</div>
+<footer>
+ <div class="mainWrap clearfix">
+     <section>
+         <div class="thulogo"><img src="/publish/thunews/images/thulogo.png"></div>
+            <div class="copyright"><span><a href="/publish/thunews/10274/index.html">网站地图</a>　│　<a href="/publish/thunews/10225/index.html">关于我们</a>　│　<a href="/publish/thunews/10217/index.html">友情链接</a>　│　<a href="http://www.tsinghua.edu.cn/publish/newthu/newthu_cnt/intothu/picture/map.png" target="_blank">清华地图</a></span>
+            清华大学新闻中心版权所有，清华大学新闻网编辑部维护，电子信箱:news@tsinghua.edu.cn<br>
+Copyright 2001-2020 news.tsinghua.edu.cn. All rights reserved.
+            </div>
+        </section>
+    </div></footer>
+ <script type="text/javascript">picurlth();</script>
+</body>
+</html>
